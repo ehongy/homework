@@ -55,7 +55,8 @@ body {
           padding: 2px 4px;
           border-radius: 100%;
           background: #f4c600;
-          color: white; }
+          color: white;
+          display: none; }
       .main-fluid .main .main-person .main-btn .person-add {
         border: 1px solid #0097cf;
         padding: 2px 5px;

@@ -3,12 +3,25 @@ var write=document.getElementById('write');
 var ok=document.getElementById('ok');
 var text=document.getElementById('text');
 var main_btn=document.getElementById('main-btn');
-var person_remove=document.getElementsByClassName('person-remove');
+var person_remove=main_btn.getElementsByTagName('span');
+var person_btn=main_btn.getElementsByClassName('person_btn');
 	sub.onclick=function(){
-		write.innerHTML='编辑'	
+		write.innerHTML='编辑';
+		for(var i=0;i<person_remove.length;i++){
+			person_remove[i].style.display='block';
+		}
+		for(var i=0;i<person_btn.length;i++){
+			person_btn[i].onclick=function(){
+				this.style.display='none'
+			}
+		}
+		
 	}
 	ok.onclick=function(){
 		write.innerHTML='榜单'
+		for(var i=0;i<person_remove.length;i++){
+			person_remove[i].style.display='none';
+		}
 		var val=text.value;
 		if(val==""){
 			alert('不能为空')
@@ -21,5 +34,5 @@ var person_remove=document.getElementsByClassName('person-remove');
 			btn.appendChild(span)
 		}	
 		main_btn.insertBefore(btn,sub)
-
+		
 	}
